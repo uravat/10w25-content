@@ -1,0 +1,154 @@
+---
+title: "Your Turn : Named continuous distributions"
+author: "Dr. Uma Ravat"
+date: "`r Sys.Date()`"
+tutorial:
+  id: "Lecture09_Named distributions"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+description: "Named distributions"
+runtime: shiny_prerendered
+---
+
+
+```{r setup, include = FALSE}
+library(learnr)
+library(tutorial.helpers)
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+options(tutorial.exercise.timelimit = 60, 
+        tutorial.storage = "local") 
+```
+
+```{r, echo = F}
+bfcolor <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{\\textbf{%s}}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
+  } else x
+}
+```
+
+
+```{r copy-code-chunk, child = system.file("child_documents/copy_button.Rmd", package = "tutorial.helpers")}
+```
+
+```{r info-section, child = system.file("child_documents/info_section.Rmd", package = "tutorial.helpers")}
+```
+
+##  Uniform  Distributions
+
+
+A bus arrives at a stop every 10 minutes. A student is equally likely to arrive at the stop at any time. How long will the student have to wait?
+
+What is the probability the waiting time, $X$, 
+
+1. 5 minutes or less?
+2. between 5 and 7 minutes?
+3. more than 6 minutes?
+
+###
+
+- Let $X$ denote the waiting time until the next bus arrives.
+
+- $X$ is a continuous uniform random variable, measured from 0 to 10 minutes.
+- p.d.f is $f(x) = \frac{1}{10}, \text{if } 0 \leq x \leq 10$
+
+It is always helpful(and mistakes are avoided) to **draw a picture** of the density and **shade the desired area** under the curve while doing probability calculations. 
+
+###
+
+
+### Probability calculation 1: Waiting time 5 minutes or less?
+
+
+
+```{r waitingtime1, exercise=TRUE, exercise.eval=FALSE}
+your_code_here
+```
+
+```{r waitingtime1-solution}
+
+punif(5, min = 0, max = 10)
+
+```
+
+### Probability calculation 2: Waiting time between 5 and 7 minutes?
+
+```{r waitingtime2, exercise=TRUE, exercise.eval=FALSE}
+your_code_here
+```
+
+```{r waitingtime2-solution}
+
+punif(7, min = 0, max = 10) - punif(5, min = 0, max = 10)
+
+```
+
+### Probability calculation 3: Waiting time more than 6 minutes?
+
+```{r waitingtime3, exercise=TRUE, exercise.eval=FALSE}
+your_code_here
+```
+
+```{r waitingtime3-solution}
+punif(10, min = 0, max = 10) - punif(6, min = 0, max = 10)
+# or 
+punif(6, min = 0, max = 10, lower.tail = FALSE)
+# or
+1 - punif(6, min = 0, max = 10)
+```
+
+
+
+
+## Generating uniform observations
+
+
+### Generate a sample of size 5 from the uniform distribution on [0,10]
+
+X ∼ Unif(0, 10)
+
+Recall: 
+
+- punif : cdf
+- dunif : density
+- runif : random sample
+- qunif : quantile
+
+```{r unif4, exercise=TRUE, exercise.eval=FALSE}
+your_code_here
+```
+
+```{r unif4-solution}
+runif(5, min = 0, max = 10)
+```
+
+### Generate 5 samples and plot them 
+
+```{r unif5, exercise=TRUE, exercise.eval=FALSE}
+your_code_here
+```
+
+```{r unif5-solution}
+hist(runif(5, min = 0, max = 10))
+```
+
+### Generate many samples and plot them 
+
+```{r unif6, exercise=TRUE, exercise.eval=FALSE}
+your_code_here
+```
+
+```{r unif6-solution}
+hist(runif(100, min = 0, max = 10))
+```
+
+
+
+```{r download-answers, child = system.file("child_documents/download_answers.Rmd", package = "tutorial.helpers")}
+```
+
