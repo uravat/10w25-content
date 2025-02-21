@@ -344,46 +344,6 @@ The amount of time a randomly selected person spends on the phone in a given day
 
 ---
 
-## Exercise 6: Survey
-
-Students have the option to participate in either or both of two survey opportunities.  
-
-- **Survey 1** [click here](https://tinyurl.com/pstat10f23), remember to take a screenshot after you submit the survey and know where it is saved on your local computer.
-- **Survey 2** [click here](https://tinyurl.com/dd10f23),  remember to take a screenshot after you submit the survey and know where it is saved on your local computer.
-
-You will need to submit these screenshots of the finished surveys through your `.Rmd` and knitted `.html` file as mentioned below. In the survey, you may indicate if you do not consent to use your answers in a research project. You may alternatively, pick an image of your choice and replace the required screenshot with your favorite image to complete this assignment.  
-
-**(a)** Please upload your completed survey screenshots to the `screenshots` folder. In **(b)** and **(c)** you will update the code block(s)  to replace the the provided `.png` file name to the file name(s) of your screenshot(s) to be eligible for extra credit.  As your solution, add a line to indicating that you completed  steps in part(a).
-
-`r bfcolor("Solutions", "blue")`
-
-
-\
-
-**(b)** **Survey 1** (+1 Point)
-
-If you completed Survey 1, in the code chunk below, replace `screenshot_to_replace.png` to the filename of the screenshot for Survey 1 completion you saved to the screenshots folder in part (a).  Otherwise, include your favorite image. 
-
-```{r, echo = F, out.width="75%", fig.cap = "Survey 1 - Screenshot"}
-include_graphics("./screenshots/screenshot_to_replace.png")
-
-```
-
-\
-
-
-**(c)** **Survey 2** (+1 Point)
-
-If you completed Survey 2, in the code chunk below, replace `screenshot_to_replace.png` to the filename of the screenshot for Survey 2 completion you saved to the screenshots folder in part (a). Otherwise, include your favorite image.
-
-```{r, echo = F, out.width="75%", fig.cap = "Survey 2 - Screenshot"}
-include_graphics("./screenshots/screenshot_to_replace.png")
-
-```
-
-
----
-
 
 # Learning Gains Week 06
 
