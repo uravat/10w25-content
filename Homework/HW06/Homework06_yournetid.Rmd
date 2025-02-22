@@ -105,7 +105,7 @@ The number of times the audio system in IV Theatre 1 failed was observed over a 
 
 \
 
-**(d)** Plot the c.d.f using `type="S"` to get the stair-case plot. 
+**(d)** Plot the c.d.f using `type="s"` to get the stair-case plot. 
 
 `r bfcolor("Solutions:", "blue")`
 
