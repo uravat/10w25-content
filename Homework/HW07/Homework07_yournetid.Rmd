@@ -32,7 +32,6 @@ bfcolor <- function(x, color) {
 - The submission portal on Canvas is back to having 2 questions:
     - One for uploading your `.html` file 
     - One for uploading your `.zip` file containing both the `.html` and `.Rmd` files (along with any relevant datasets/images) 
-- The final exercise presents an **optional** opportunity for **extra credit**. You are not required to do this exercise. Please read and follow the instructions carefully to qualify for additional points, should you choose to pursue this option. 
 - Remember to **rename** your `.Rmd` file as `Homework07_yournetid.Rmd`
 - Remember to always copy the necessary files to your `workingfiles` folder; never edit and/or knit the files directly in the `10-content` folder.
 
