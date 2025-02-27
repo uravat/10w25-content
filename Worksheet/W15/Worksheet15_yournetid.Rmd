@@ -1,0 +1,240 @@
+---
+title: "PSTAT 10: Worksheet 15"
+subtitle: "YOUR LAST NAME, YOUR FIRST NAME: YOUR NETID"
+author: "Collaborated with: LAST NAME, FIRST NAME, NETID of any collaboraters"
+date: "Make sure you show your work to your TA once complete."
+output:
+  html_document:
+    theme: readable
+    toc: yes
+fontsize: 12pt
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo = F}
+bfcolor <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{\\textbf{%s}}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
+  } else x
+}
+```
+
+---
+
+# Instructions for Completion
+
+- We are back to having only computing exercises on the worksheets. As such, you must complete the computing exercises by filling in your code on this `.Rmd` file.
+
+\
+
+---
+
+# Exercises
+
+## Exercise 0: YAML
+
+Update the YAML to reflect your own information (i.e. name, collaborators, etc.). If you did not collaborate with anyone, note that down in the YAML. 
+
+
+\
+
+---
+
+For this worksheet, we need will again connect to the Chinook DB from lecture. Make sure the database is available to this `.Rmd` file in `data` folder
+
+## Exercise 1: Connecting to the database
+
+Load the necessary packages and open a connection to the Chinook database housed in the sqlite file in the data folder
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+\
+
+---
+
+## Exercise 2: Exploring the Database
+
+**(a)** What is the average length of a track in the album with `AlbumId` = 160?
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+\
+
+
+**(b)** Why is the following code incorrect in finding the average length of tracks for each album with `AlbumId` between 250 and 255, inclusive?
+
+```{r, eval = F}
+dbGetQuery(chinook_db,
+           "SELECT AVG(Milliseconds)
+           FROM track
+           WHERE AlbumId >= 250 AND AlbumId <= 255")
+```
+
+`r bfcolor("Solutions:", "blue")`
+
+**Replace this line with your answer.**
+
+
+\
+
+**(c)** Write code to find the average length of tracks for each album with AlbumId between 250 and 255, inclusive, by using a `WHERE` clause
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+\
+
+**(d)** Write code to find the average length of tracks for each album with `AlbumId` between 250 and 255, inclusive, by using a `HAVING` clause
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+\
+
+
+**(e)** Find the total number of tracks for each album with albumid between
+10 and 15 inclusive. (Use an alias so the output is easy to read)
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+
+\
+
+---
+
+## Exercise 3: Logicals in WHERE clause
+
+**(a)** Find all tracks shorter than 30,000ms (= 30s)
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+
+\
+
+**(b)** Retrieve tracks shorter than 30,000ms from the album with `AlbumId` = 258 by using "and" in the `WHERE` clause
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+
+\
+
+**(c)** Retrieve all tracks **either** shorter than 30,000ms **or** with `AlbumId` = 258
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+
+\
+
+**(d)** Retrieve tracks shorter than 30,000ms from albums other than AlbumId = 258 in three ways
+
+1. Use "not AlbumId = 258" in WHERE clause
+2. Use  the standard SQL "not" operator `<>` in WHERE clause
+3. Use the SQLite "not" operator `!=` in WHERE clause
+
+Check that all three return the same result. Since SQLite is a lightweight database, SQLite specific SQL like the `!=` won't work with other RDBMS. So it's better to stick with the standard SQL syntax so that your SQL statements can be moved over to other RDBMS's without changes (pretty much like PDF is standard file format that works on all computer systems)
+
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+
+\
+
+**(e)** Retrieve the `TrackId`, `Name`, `AlbumId`, and `Bytes` for all tracks between 300,000,000 and 400,000,000 bytes (approx between 286MB and 381MB) 
+
+`r bfcolor("Solutions:", "blue")`
+
+```{r}
+# Write your code here
+
+```
+
+
+
+\
+
+---
+
+
+## Exercise 4: Your own SQL query
+
+Write your own SQL query that uses a join and describe in words what your query is doing. You may choose another table to query if you like.  
+
+```{r}
+# Write your code here
+
+```
+
+
+\
+
+---
+
+## Exercise 5: Don't forget to close the connection to the database
+
+```{r}
+# Write your code here
+
+```
+
+\
+
+---
+
+# Last exercise : Learning Gains
+
+Please remember to fill out these learning gains before showing your TA your work to get Worksheet credit!
+
+-   Gain 1
+-   Gain 2
+-   Gain 3
+
+
